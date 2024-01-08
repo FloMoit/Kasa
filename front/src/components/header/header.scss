@@ -1,0 +1,41 @@
+@import "../../style/main.scss";
+
+.header {
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  &__logo {
+    height: 48px;
+    width: 110px;
+  }
+  @media all and (min-width: 768px) {
+    height: 108px;
+    padding: 40px 100px;
+    &__logo {
+      height: 58px;
+      width: 170px;
+    }
+  }
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__link {
+    font-size: 14px;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  @include breakpoint(768px) {
+    column-gap: 50px;
+
+    &__link {
+      font-size: 24px;
+    }
+  }
+}

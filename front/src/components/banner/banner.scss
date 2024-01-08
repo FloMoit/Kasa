@@ -1,0 +1,36 @@
+@import "../../style/main.scss";
+
+.banner {
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 22px;
+  mix-blend-mode: darken;
+  &__home {
+    height: 111px;
+    background: url("../../assets/banner.png") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    &__h1 {
+      font-size: 24px;
+    }
+  }
+
+  @include breakpoint(768px) {
+    border-radius: 25px;
+    justify-content: center;
+    margin: 30px auto 45px;
+    &__home {
+      height: 223px;
+      &__h1 {
+        font-size: 48px;
+      }
+    }
+    &__sm {
+      display: none;
+    }
+  }
+}

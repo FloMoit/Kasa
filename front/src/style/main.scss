@@ -1,0 +1,55 @@
+@import "_reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;713;800;900&display=swap");
+
+$primary-color: #ff6060;
+$secondary-color: #fff;
+$light-bg-color: #f7f7f7;
+
+.white {
+  color: $secondary-color;
+}
+
+.light-bg {
+  background-color: $light-bg-color;
+}
+
+.white-bg {
+  background-color: $secondary-color;
+}
+
+@mixin breakpoint($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+* {
+  font-family: Montserrat, Helvetica, sans-serif;
+  color: $primary-color;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  margin: 0 20px;
+  flex-grow: 1;
+  @include breakpoint(768px) {
+    margin: 0 100px;
+  }
+
+  .white {
+    color: $secondary-color;
+  }
+
+  .light-bg {
+    background-color: $light-bg-color;
+  }
+
+  .white-bg {
+    background-color: $secondary-color;
+  }
+}

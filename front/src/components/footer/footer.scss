@@ -1,0 +1,25 @@
+@import "../../style/main.scss";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+
+  height: 150px;
+  background-color: #000;
+  justify-self: flex-end;
+  &__h2 {
+    font-size: 12px;
+  }
+  &__logo {
+    height: 36px;
+  }
+  @include breakpoint(768px) {
+    height: 210px;
+    &__h2 {
+      font-size: 24px;
+    }
+  }
+}
