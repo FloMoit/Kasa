@@ -1,0 +1,32 @@
+@import "../../style/_setup.scss";
+
+.card {
+  border-radius: 10px;
+  height: 335px;
+  background: linear-gradient(180deg, #ffffff00 0%, #00000080 100%);
+  position: relative;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 12px 3px $primary-color;
+    transform: scale(1.01);
+  }
+  &__title {
+    line-height: 26px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding-right: 20px;
+  }
+  &__img {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    mix-blend-mode: darken;
+  }
+  @include breakpoint(768px) {
+    height: 325px;
+    width: 325px;
+  }
+}

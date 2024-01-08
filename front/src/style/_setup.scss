@@ -1,0 +1,9 @@
+$primary-color: #ff6060;
+$secondary-color: #fff;
+$light-bg-color: #f7f7f7;
+
+@mixin breakpoint($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

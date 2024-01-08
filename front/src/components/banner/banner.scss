@@ -1,4 +1,4 @@
-@import "../../style/main.scss";
+@import "../../style/_setup.scss";
 
 .banner {
   width: 100%;
@@ -13,9 +13,21 @@
     height: 111px;
     background: url("../../assets/banner.png") no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
+    position: relative;
     &__h1 {
       font-size: 24px;
+      z-index: 1;
+    }
+    &__darkener {
+      background-color: rgba(0, 0, 0, 0.5);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      border-radius: 25px;
+      position: absolute;
     }
   }
 
