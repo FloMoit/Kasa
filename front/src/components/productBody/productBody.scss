@@ -1,0 +1,60 @@
+@import "../../style/_setup.scss";
+
+.product {
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__location {
+    font-size: 14px;
+    margin: 10px 0px;
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__host {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 16px 0px;
+  }
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  @include breakpoint(768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    &__head {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    &__title {
+      font-size: 36px;
+    }
+    &__location {
+      font-size: 18px;
+      margin: 20px 0px;
+    }
+    &__host {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      width: 27.5%;
+    }
+    &__desc {
+      display: flex;
+      gap: 50px;
+    }
+  }
+}

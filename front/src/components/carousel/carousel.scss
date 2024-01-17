@@ -1,0 +1,60 @@
+@import "../../style/_setup.scss";
+
+.carousel {
+  height: 255px;
+  width: 100%;
+  border-radius: 25px;
+  margin: 15px auto;
+  position: relative;
+  &__arrows {
+    display: contents;
+  }
+  &__number {
+    position: absolute;
+    bottom: 25px;
+    left: 49%;
+    display: none;
+  }
+  &__img {
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__arrow {
+    position: absolute;
+    bottom: calc((235px) / 2);
+    max-height: 20px;
+    max-width: 12px;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+    &--left {
+      left: 7.5px;
+    }
+    &--right {
+      right: 7.5px;
+    }
+  }
+  @include breakpoint(768px) {
+    margin: 40px auto;
+    height: 415px;
+    width: 100%;
+    &__number {
+      display: initial;
+    }
+    &__arrow {
+      bottom: calc((335px) / 2);
+      max-height: 80px;
+      max-width: 47px;
+      &--left {
+        left: 20px;
+      }
+      &--right {
+        right: 20px;
+      }
+    }
+  }
+}

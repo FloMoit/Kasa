@@ -1,27 +1,31 @@
-import { useState } from "react";
+import * as React from "react";
 import { Link } from "react-router-dom";
-import Card from "../card/card.tsx";
+import Card from "../card/card";
 import "./gallery.scss";
+import type { Product } from "../../types/product";
 
 function Gallery() {
-  const [houses, setHouses] = useState([]);
+  const [products, setProducts] = React.useState<Product[]>([]);
 
   async function getData() {
     const res = await fetch("http://localhost:3000/");
-    const data = await res.json();
-    setHouses(data);
+    const data: Product[] = await res.json();
+    setProducts(data);
   }
-  getData();
+
+  React.useEffect(() => {
+    getData();
+  }, []);
 
   return (
     // Create one card per houses data entry
     <div className="gallery">
-      {houses.map((house) => (
+      {products.map((product) => (
         <Link
           className="gallery__link"
-          key={`${house.id}`}
-          to={`/house/${house.id}`}>
-          <Card title={`${house.title}`} image={`${house.cover}`} />
+          key={`${product.id}`}
+          to={`/product/${product.id}`}>
+          <Card title={`${product.title}`} image={`${product.cover}`} />
         </Link>
       ))}
     </div>

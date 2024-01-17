@@ -1,0 +1,54 @@
+@import "../../style/_setup.scss";
+
+.dropdown {
+  width: 100%;
+  height: initial;
+  border-radius: 5px;
+  &__head {
+    background-color: $primary-color;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+
+    padding: 0 20px;
+    cursor: pointer;
+  }
+  &__img {
+    height: 9px;
+    width: 15px;
+
+    &__rotated {
+      rotate: 180deg;
+    }
+  }
+  &__body {
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    list-style-type: none;
+    &--closed {
+      display: none;
+    }
+  }
+  @include breakpoint(768px) {
+    &__head {
+      height: 47px;
+      width: 100%;
+      font-size: 24px;
+    }
+    &__body {
+      font-size: 18px;
+      line-height: 26px;
+    }
+    &__img {
+      width: 24px;
+      height: 14px;
+    }
+  }
+}
