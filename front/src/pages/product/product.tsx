@@ -6,25 +6,35 @@ import ProductBody from "../../components/productBody/productBody";
 import type { Product } from "../../types/product";
 
 function Product() {
-  const productParam: string = useParams();
-  const productId: string = productParam.productId;
-  const [product, setProduct] = React.useState<Product>();
+  const { productId } = useParams();
+  const [product, setProduct] = React.useState<{
+    data: Product | null;
+    loading: boolean;
+  }>({ data: null, loading: true });
 
   async function findProduct(id: string) {
-    const res = await fetch("http://localhost:3000/");
-    const data: Product[] = await res.json();
-    setProduct(data.find((product) => product.id === id));
+    const res = await fetch("http://localhost:3000/" + id);
+    const data: Product = await res.json();
+    setProduct({ data: data, loading: false });
   }
 
   React.useEffect(() => {
-    findProduct(productId);
+    findProduct(productId as string);
   }, []);
 
-  return product ? (
-    <div>
-      <Carousel product={product} />
-      <ProductBody product={product} />
-    </div>
+  if (product.loading) {
+    return (
+      <div>
+        <h1>Chargement</h1>
+      </div>
+    );
+  }
+
+  return product.data ? (
+    <>
+      <Carousel product={product.data} />
+      <ProductBody product={product.data} />
+    </>
   ) : (
     <Error />
   );

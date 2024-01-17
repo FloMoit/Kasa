@@ -1,7 +1,8 @@
 import "./host.scss";
+import type { Host } from "../../types/host";
 
-function Host(props) {
-  const host = props.host;
+function Host(props: { host: Host }) {
+  const { host } = props;
   return (
     <div className="host">
       <p className="host__name">{host.name}</p>

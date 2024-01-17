@@ -1,13 +1,12 @@
+import type { Host } from "./host";
+
 type Product = {
   id: string;
   title: string;
   cover: string;
   pictures: string[];
   description: string;
-  host: {
-    name: string;
-    picture: string;
-  };
+  host: Host;
   rating: string;
   location: string;
   equipments: string[];

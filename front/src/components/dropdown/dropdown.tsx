@@ -2,7 +2,9 @@ import { useState } from "react";
 import upArrow from "../../assets/arrow-up.png";
 import "./dropdown.scss";
 
-function Dropdown({ title, body, isList }) {
+function Dropdown(props: { title?: string; body?: string | string[] }) {
+  const { title = "Description", body = "votre description ici..." } = props;
+
   // Set dropdown to be closed by default
   const [open, setOpen] = useState(false);
 
@@ -19,7 +21,7 @@ function Dropdown({ title, body, isList }) {
           }
         />
       </div>
-      {isList ? (
+      {Array.isArray(body) ? (
         <ul
           className={
             open
@@ -43,11 +45,5 @@ function Dropdown({ title, body, isList }) {
     </div>
   );
 }
-
-Dropdown.defaultProps = {
-  title: "Description",
-  body: "votre description ici...",
-  isList: false,
-};
 
 export default Dropdown;

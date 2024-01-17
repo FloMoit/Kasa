@@ -6,13 +6,13 @@ import Tag from "../tag/tag";
 import type { Product } from "../../types/product";
 import "./productBody.scss";
 
-function ProductBody(props) {
+function ProductBody(props: { product: Product }) {
   // Get house data from context
-  const product: Product = props.product;
+  const { product } = props;
 
   return (
     // Display this data on House page
-    <Fragment>
+    <>
       <section className="product">
         <div className="product__head">
           <h1 className="product__title">{product.title}</h1>
@@ -30,14 +30,10 @@ function ProductBody(props) {
       </section>
 
       <div className="product__desc">
-        <Dropdown
-          title="Description"
-          body={product.description}
-          isList={false}
-        />
-        <Dropdown title="Équipements" body={product.equipments} isList={true} />
+        <Dropdown title="Description" body={product.description} />
+        <Dropdown title="Équipements" body={product.equipments} />
       </div>
-    </Fragment>
+    </>
   );
 }
 
