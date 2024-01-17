@@ -10,6 +10,11 @@ app.get("/", (req, res) => {
   res.json(data);
 });
 
+app.get("/:id", (req, res) => {
+  const { id } = req.params;
+  res.json(data.find((product) => product.id === id));
+});
+
 app.listen(port, () => {
   console.log(`Back end listening on port ${port}`);
 });
