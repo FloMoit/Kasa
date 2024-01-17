@@ -1,0 +1,15 @@
+@import "../../style/_setup.scss";
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  margin: 0 auto 45px;
+  @include breakpoint(768px) {
+    width: 82.5%;
+    gap: 35px;
+  }
+}

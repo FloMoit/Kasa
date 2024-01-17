@@ -1,14 +1,21 @@
 import "./banner.scss";
 
-function Banner() {
-  // Create different classNames for house and about pages banners
+function Banner(props) {
+  const classes = props.about
+    ? ["banner banner__about", "white banner__about__h1"]
+    : ["banner banner__home", "white banner__home__h1"];
 
   return (
-    <section className="banner banner__home">
-      <h1 className="white banner__home__h1">Chez vous, partout et ailleurs</h1>
-      <div className="banner__home__darkener"></div>
+    <section className={classes[0]}>
+      <h1 className={classes[1]}>
+        Chez vous, <br className="banner__sm" /> partout et ailleurs
+      </h1>
     </section>
   );
 }
+
+Banner.defaultProps = {
+  about: false,
+};
 
 export default Banner;
