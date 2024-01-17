@@ -7,14 +7,12 @@
   align-items: center;
   padding: 40px 20px;
   &__logo {
-    height: 48px;
     width: 110px;
   }
   @media all and (min-width: 768px) {
     height: 108px;
     padding: 40px 100px;
     &__logo {
-      height: 58px;
       width: 170px;
     }
   }
