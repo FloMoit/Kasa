@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Dropdown from "../dropdown/dropdown";
 import Host from "../host/host";
 import Rating from "../rating/rating";

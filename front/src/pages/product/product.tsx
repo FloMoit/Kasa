@@ -20,6 +20,7 @@ function Product() {
 
   React.useEffect(() => {
     findProduct(productId as string);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (product.loading) {
